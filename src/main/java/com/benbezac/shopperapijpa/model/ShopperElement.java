@@ -1,17 +1,21 @@
 package com.benbezac.shopperapijpa.model;
 
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity // This tells Hibernate to make a table out of this class
-@Data // Lombok: adds getters and setters
+@Getter // Lombok: adds getters
+@Setter // Lombok: adds  setters
 public class ShopperElement {
     public ShopperElement() {
+    }
+
+    public ShopperElement(String name) {
+        this.name = name;
     }
 
     @Id
@@ -19,5 +23,13 @@ public class ShopperElement {
     private Integer id;
 
     private String name;
-    private String description;
+
+    @ManyToOne
+    @JoinColumn
+    @JsonBackReference
+    private ShopperList shopperList;
+
+//    @ManyToOne
+//    @JoinColumn
+//    private ShopperElementCategory shopperElementCategory;
 }
