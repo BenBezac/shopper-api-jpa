@@ -14,14 +14,10 @@ public class ShopperElement {
     public ShopperElement() {
     }
 
-    public ShopperElement(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
     private String name;
+    private String description;
 }
