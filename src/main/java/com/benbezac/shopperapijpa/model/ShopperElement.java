@@ -14,8 +14,9 @@ public class ShopperElement {
     public ShopperElement() {
     }
 
-    public ShopperElement(String name) {
+    public ShopperElement(String name, boolean checked) {
         this.name = name;
+        this.checked = checked;
     }
 
     @Id
@@ -23,6 +24,8 @@ public class ShopperElement {
     private Integer id;
 
     private String name;
+
+    private boolean checked;
 
     @ManyToOne
     @JoinColumn

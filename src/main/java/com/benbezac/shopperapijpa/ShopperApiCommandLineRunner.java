@@ -26,9 +26,9 @@ public class ShopperApiCommandLineRunner implements CommandLineRunner {
     public void run(String... args) {
         // Create a couple of Book and BookCategory
 
-        ShopperElement seWater = new ShopperElement("eau plate");
-        ShopperElement seSparklingWater = new ShopperElement("eau gazeuse");
-        ShopperElement seTomato = new ShopperElement("tomate");
+        ShopperElement seWater = new ShopperElement("eau plate", false);
+        ShopperElement seSparklingWater = new ShopperElement("eau gazeuse", true);
+        ShopperElement seTomato = new ShopperElement("tomate", false);
 
 //		ShopperElementCategory catBeverage = shopperElementCategoryRepository.save(new ShopperElementCategory("boisson", "Catégorie des Boissons", seWater, seSparklingWater));
 //		ShopperElementCategory catFruitAndVegetable = shopperElementCategoryRepository.save(new ShopperElementCategory("fruits & légumes", "Catégorie des Fruits et Légumes", seTomato));
